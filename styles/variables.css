@@ -4,13 +4,11 @@
 */
 
 :root {
-  --bg-image: url(/images/cover-image-dark.png);
+  --bg-image: url("../images/cover-image-dark.png");
   --text-color: #ff0070;
   --text-color-title: #000028;
   --title-color: #db00ff;
   --accent-color: #ff0070;
-  --text-color-title: #000028;
   --p-color: #f1b2ce;
-  --link-effects: #FF0070;
-  
+  --link-effects: #FF0070;  
 }
