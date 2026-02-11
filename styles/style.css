@@ -55,36 +55,36 @@ ol {
 
 /* ----- CSS header ----- */
 .header {
+  display: grid;
   width: 100%;
-  position: relative;
-  height: 100vh;
-  max-height: 964px;
-  padding: 10px 10px 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  align-items: start;
+  place-self: center center;
 }
 
 .header__theme-menu {
-  display: grid;
+  grid-column: 3;
   list-style: none;
-  padding-top: 66px;
-  justify-content: end;
+  padding: 75px 10px 0;
+  justify-items: end;
 }
 
 .header__theme-menu-list {
   display: grid;
-  gap: 12px;
-  justify-content: center;
+  gap: 10px;
+  place-self: center center;
 }
 
 .header__theme-menu-button {
+  font-size: 18px;
   font-family: "IBM Plex Mono", monospace;
   background: transparent;
   outline: none;
   border: 1px solid transparent;
   min-width: 70px;
   text-transform: lowercase;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .header__theme-menu-button_active {
@@ -106,9 +106,10 @@ ol {
 }
 
 .block-title {
+  grid-row: 2;
   width: 69vw;
-  padding-top: 66px;
-  justify-self: start;
+  padding: 11px 10px 0;
+  place-self: start end;
 }
 
 .block-title_text {
@@ -129,9 +130,9 @@ ol {
 }
 
 .cit-block {
-  padding-top: 56px;
-
-  width: 100%;
+  grid-column: span 3;
+  padding: 0px 10px 9px;
+  place-self: start end;
 }
 
 .cit-text {
@@ -184,7 +185,7 @@ ol {
 .decorated-zone {
   position: relative;
   height: 100vh;
-  max-height: 668px;
+  min-height: 640px;
 }
 
 .decorated-zone::before,
@@ -272,7 +273,7 @@ ol {
 
 .footer {
   display: grid;
-  max-height: 667px;
+  width: 100%;
   place-content: center;
   margin-top: 25px;
 }
@@ -332,7 +333,9 @@ ol {
   border: 1px solid rgba(255, 0, 112, 0.4);
 }
 
-/* ----- Медиазапросы Tablet (768px) ----- */
+/* ----- 
+Медиазапросы Tablet (768px) 
+----- */
 @media (min-width: 768px) and (max-width: 1024px) {
   .page {
     height: 100vh;
@@ -341,6 +344,7 @@ ol {
 
   .decorated-zone {
     max-height: 984px;
+    height: 100vh;
   }
 
   .decorated-zone::before {
@@ -354,7 +358,9 @@ ol {
   }
 
   .header {
-    max-height: 1024px;
+    display: grid;
+    grid-auto-rows: minmax(20px, auto);
+    min-height: 768px;
     padding: 0;
   }
 
@@ -364,31 +370,31 @@ ol {
   }
 
   .header__theme-menu {
-    padding: 190px 20px 0;
+    padding: 191px 10px 0;
   }
 
   .block-title {
     width: 100%;
-    padding-top: 175px;
+    padding: 32px 0px 0;
   }
 
   .block-title_text {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    font-size: 120px;
+    font-size: 15.61vw;
+    /* font-size: 120px;*/
   }
 
   .cit-block {
     justify-self: end;
-    padding: 162px 0 0;
-    width: 364px;
-    margin-right: 20px;
+    padding: 20px 20px 0;
+    width: 52.7vw;
   }
 
   .main-content {
     grid-template-columns: 1fr;
     display: grid;
     gap: 80px;
-    margin: 20px 20px 0;
+    margin: 60px 20px 0;
   }
 
   .main-section:nth-child(1),
@@ -486,7 +492,9 @@ ol {
   }
 }
 
-/* ----- Медиазапросы Tablet (1024px) ----- */
+/* ----- 
+Медиазапросы Tablet (1024px)
+ ----- */
 @media (min-width: 1024px) {
   .decorated-zone {
     max-height: 768px;
@@ -494,8 +502,7 @@ ol {
 
   .header__theme-menu {
     padding-top: 20px;
-    align-items: start;
-    justify-content: center;
+    grid-column: span 3;
   }
 
   .header__theme-menu-list {
@@ -506,20 +513,22 @@ ol {
   }
 
   .block-title {
-    padding-top: 272px;
+    width: 100%;
+    grid-column: 1 / 3;
+    padding: 157px 0 0;
   }
 
   .block-title_text {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     font-size: 116px;
-    font-size: calc(155px + 1vw);
-    letter-spacing: -5px;
+    font-size: calc(157px - 1vh);
+    letter-spacing: 5px;
   }
 
   .cit-block {
-    width: 48vw;
+    width: 51.9vw;
     justify-self: end;
-    padding: 112px 0 0;
+    padding: 0 20px 12px;
   }
 
   .highlight-block {
@@ -527,7 +536,7 @@ ol {
   }
 
   .main-content {
-    grid-template-columns: 1fr;
+    margin: 20px 20px 0;
   }
 
   .li-content {
@@ -544,7 +553,7 @@ ol {
   }
 
   .main-section:nth-child(3) .card__main-title {
-    width: 30vh;
+    width: 44vh;
   }
 
   .main-section:nth-child(1) h2,
@@ -616,7 +625,9 @@ ol {
   }
 }
 
-/* ----- Медиозапросы экран больше 1440px ----- */
+/* ----- 
+Медиозапросы экран больше 1440px 
+----- */
 @media (min-width: 1440px) {
   .body {
     display: flex;
