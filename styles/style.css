@@ -22,7 +22,7 @@ li {
 
 h2,
 h3,
-h4 {
+strong {
   font-size: 18px;
   font-weight: 700;
   color: var(--text-color);
@@ -57,6 +57,7 @@ ol {
 .header {
   display: grid;
   width: 100%;
+  min-height: 668px;
   background-color: var(--bg-color);
   color: var(--text-color);
   place-self: center center;
@@ -249,7 +250,6 @@ ol {
 /* ----- Галерея картинок 3 колонки ----- */
 .gallery-list {
   display: grid;
-  gap: 20px;
   box-sizing: border-box;
   gap: 10px;
 }
@@ -343,7 +343,7 @@ ol {
   }
 
   .decorated-zone {
-    max-height: 984px;
+    min-height: 1024px;
     height: 100vh;
   }
 
@@ -360,7 +360,7 @@ ol {
   .header {
     display: grid;
     grid-auto-rows: minmax(20px, auto);
-    min-height: 768px;
+    min-height: 1024px;
     padding: 0;
   }
 
@@ -392,17 +392,14 @@ ol {
 
   .main-content {
     grid-template-columns: 1fr;
-    display: grid;
+
     gap: 80px;
     margin: 60px 20px 0;
   }
 
   .main-section:nth-child(1),
   .main-section:nth-child(3) {
-    display: grid;
     grid-template-columns: 30% auto;
-    gap: 20px;
-    padding: 0 0 0 0;
   }
 
   .main-section:nth-child(1) ul,
@@ -426,9 +423,6 @@ ol {
 
   /* ----- Галерея картинок 3 колонки Tablet (768px) ----- */
   .main-section_gallery {
-    display: grid;
-    grid-column: span 3;
-    grid-auto-rows: minmax(auto, auto);
     gap: 20px;
   }
 
@@ -436,7 +430,6 @@ ol {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 25vw 30vw 41vw;
     gap: 20px;
-    box-sizing: border-box;
     grid-auto-flow: dense;
   }
 
@@ -483,8 +476,7 @@ ol {
   }
 
   .footer {
-    margin: 46px 0 0px;
-    max-height: 1024px;
+    margin: 46px 0 0;
   }
 
   .block-title_footer {
@@ -496,8 +488,12 @@ ol {
 Медиазапросы Tablet (1024px)
  ----- */
 @media (min-width: 1024px) {
+  .header {
+    min-height: 768px;
+  }
+
   .decorated-zone {
-    max-height: 768px;
+    min-height: 768px;
   }
 
   .header__theme-menu {
