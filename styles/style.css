@@ -1,6 +1,7 @@
 html,
 body {
   font-family: "IBM Plex Mono", monospace;
+  margin: 0;
 }
 
 body {
@@ -9,26 +10,25 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5,
 p,
 ul,
-ol,
-li {
+li,
+strong {
   margin: 0;
+  padding: 0;
   margin-block: 0;
 }
 
 h2,
-h3,
 strong {
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: bold;
+  line-height: 1.3;
   color: var(--text-color);
 }
 
-h5,
+span,
 p {
   font-size: 18px;
   font-weight: 400;
@@ -39,25 +39,45 @@ p {
   line-height: 23.4px;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 
-/* ----- настройки страницы ----- Mobile first (376px) */
-.body {
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
+header {
+  grid-row: 1;
+}
+
+main {
+  grid-row: 2;
+}
+
+footer {
+  grid-row: 3;
+}
+
+/* ----- настройки страницы ----- Mobile first (376px) */
+
 /* ----- CSS header ----- */
 .header {
   display: grid;
   width: 100%;
-  min-height: 668px;
+  /*  min-height: 668px;*/
   background-color: var(--bg-color);
   color: var(--text-color);
   place-self: center center;
@@ -109,7 +129,7 @@ ol {
 .block-title {
   grid-row: 2;
   width: 69vw;
-  padding: 11px 10px 0;
+  padding: 13px 10px 0;
   place-self: start end;
 }
 
@@ -132,7 +152,7 @@ ol {
 
 .cit-block {
   grid-column: span 3;
-  padding: 0px 10px 9px;
+  padding: 0 10px 10px;
   place-self: start end;
 }
 
@@ -158,6 +178,7 @@ ol {
 }
 
 .decorative-rec {
+  display: var(--rec-display);
   position: absolute;
   top: 10px;
   right: 20px;
@@ -185,12 +206,12 @@ ol {
 /* Псевдоэлемент: уголки */
 .decorated-zone {
   position: relative;
-  height: 100vh;
-  min-height: 640px;
+  height: clamp(568px, 100vh, 668px);
 }
 
 .decorated-zone::before,
 .decorated-zone::after {
+  display: inline;
   content: "";
   position: absolute;
   width: 25px;
@@ -218,14 +239,12 @@ ol {
 .main-content {
   display: grid;
   gap: 50px;
-  margin: 0 10px 0;
-  padding: 40px 0 15px;
+  margin: 40px 10px;
 }
 
 .main-section {
   display: grid;
   grid-column: 1 / span 3;
-  grid-auto-rows: minmax(auto, auto);
   gap: 20px;
 }
 
@@ -237,6 +256,12 @@ ol {
 .li-content {
   display: grid;
   gap: 10px;
+}
+
+.advice-block {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
 }
 
 /* ----- галерея  картинок ------ */
@@ -275,11 +300,6 @@ ol {
   display: grid;
   width: 100%;
   place-content: center;
-  margin-top: 25px;
-}
-
-.block-title_footer {
-  padding-top: 45px;
 }
 
 .text-shadow_footer {
@@ -370,12 +390,12 @@ ol {
   }
 
   .header__theme-menu {
-    padding: 191px 10px 0;
+    padding: 190px 0 0;
   }
 
   .block-title {
     width: 100%;
-    padding: 32px 0px 0;
+    padding: 15px 0px 0;
   }
 
   .block-title_text {
@@ -386,39 +406,44 @@ ol {
 
   .cit-block {
     justify-self: end;
-    padding: 20px 20px 0;
+    padding: 0px 20px 20px;
     width: 52.7vw;
   }
 
   .main-content {
-    grid-template-columns: 1fr;
-
     gap: 80px;
-    margin: 60px 20px 0;
+    margin: 60px 20px;
+  }
+
+  .main-section:nth-child(2) h2 {
+    width: 30.7vw;
   }
 
   .main-section:nth-child(1),
   .main-section:nth-child(3) {
-    grid-template-columns: 30% auto;
+    grid-template-columns: 30.7vw 1fr;
+    /* gap: 20px; */
+    box-sizing: border-box;
+    column-gap: 20px;
   }
 
-  .main-section:nth-child(1) ul,
-  .main-section:nth-child(3) ul {
-    grid-column: 2;
-    padding: 0px 0 0 15px;
-  }
-
-  .main-section:nth-child(2) .card__main-title {
-    width: 30%;
-  }
-
+  .main-section:nth-child(2) .card__main-title,
   .main-section:nth-child(3) .card__main-title {
-    width: 25vh;
+    width: 30.7vw;
   }
 
   .main-section:nth-child(1) ul,
   .main-section:nth-child(3) ul {
     grid-column: 2;
+  }
+
+  .advice-block {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .strong-title {
+    padding: 0;
   }
 
   /* ----- Галерея картинок 3 колонки Tablet (768px) ----- */
@@ -475,10 +500,6 @@ ol {
     grid-row: span 1;
   }
 
-  .footer {
-    margin: 46px 0 0;
-  }
-
   .block-title_footer {
     padding-top: 0;
   }
@@ -524,15 +545,11 @@ ol {
   .cit-block {
     width: 51.9vw;
     justify-self: end;
-    padding: 0 20px 12px;
+    padding: 0 20px 15px;
   }
 
   .highlight-block {
     width: 100%;
-  }
-
-  .main-content {
-    margin: 20px 20px 0;
   }
 
   .li-content {
@@ -543,9 +560,8 @@ ol {
 
   .main-section:nth-child(1),
   .main-section:nth-child(3) {
-    display: grid;
-    grid-template-columns: 30% auto;
     gap: 25px;
+    grid-template-columns: 31.5% auto;
   }
 
   .main-section:nth-child(3) .card__main-title {

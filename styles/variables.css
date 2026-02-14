@@ -1,14 +1,11 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
-:root {
-  --bg-image: url("../images/cover-image-dark.png");
-  --text-color: #ff0070;
-  --text-color-title: #000028;
-  --title-color: #db00ff;
-  --accent-color: #ff0070;
-  --p-color: #f1b2ce;
-  --link-effects: #ff0070;
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-image: url("../images/cover-image-light.png");
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --link-effects: #ff8dcb;
+    --rec-display: none;
+        --p-color: #353430;
+  }
 }
