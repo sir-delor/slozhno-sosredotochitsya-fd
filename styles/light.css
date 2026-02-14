@@ -1,3 +1,4 @@
+/* Базовые стили для светлой темы */
 :root.theme-light {
   --bg-image: url("../images/cover-image-light.png");
   --text-color: #353430;
@@ -5,5 +6,5 @@
   --title-color: #ffc2e6;
   --link-effects: #ff8dcb;
   --rec-display: none;
-    --p-color: #353430;
+  --p-color: #353430;
 }
