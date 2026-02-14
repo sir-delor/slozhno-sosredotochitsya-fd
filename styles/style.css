@@ -40,22 +40,12 @@ strong {
   color: var(--text-color);
 }
 
-/*span {
-  font-size: 18px;
-  font-weight: 400;
-}*/
-
 p {
   font-size: 18px;
   font-weight: 400;
   color: var(--p-color);
   line-height: 23.4px;
 }
-/*
-header {
-  grid-row: 1;
-}
-*/
 
 main {
   grid-row: 2;
@@ -66,8 +56,7 @@ footer {
 }
 
 /* ----- настройки страницы ----- Mobile first (376px) */
-
-/* ----- CSS header ----- */
+/* -----  header ----- */
 .header {
   display: grid;
   width: 100%;
@@ -125,7 +114,7 @@ footer {
 .block-title_text {
   font-weight: 700;
   line-height: 0.81;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.23rem, 0.5625rem + 14.4531vw, 9.8125rem);
   /*  font-size: 116px; /* fallback для неподдерживаемых браузеров */
   color: var(--title-color);
 }
@@ -141,7 +130,6 @@ footer {
 }
 
 .cit-text {
-  justify-content: flex-end;
   font-weight: 700;
   font-size: 18px;
 }
@@ -154,16 +142,12 @@ footer {
 }
 
 /* ----- Декоративный элемент REC только в тёмной теме ----- */
-/*.light-theme .decorative-rec {
-  display: none;
-}*/
 
 .decorative-rec {
   display: var(--rec-display);
   position: absolute;
   top: 10px;
   right: 20px;
-  font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   font-size: 18px;
   color: var(--text-color);
@@ -241,7 +225,7 @@ footer {
 .advice-block {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 20px;
 }
 
 /* ----- галерея  картинок ------ */
@@ -284,7 +268,7 @@ footer {
 
 .text-shadow_footer {
   text-shadow: 2px 2px 0 var(--accent-color);
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 .link-info {
@@ -478,11 +462,6 @@ footer {
     grid-column: span 2;
     grid-row: span 1;
   }
-
-  .block-title_footer {
-    padding-top: 0;
-  }
-}
 
 /* ----- 
 Медиазапросы Tablet (1024px)
