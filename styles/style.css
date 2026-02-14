@@ -40,13 +40,14 @@ strong {
   color: var(--text-color);
 }
 
-span,
-p {
+span {
   font-size: 18px;
   font-weight: 400;
 }
 
 p {
+  font-size: 18px;
+  font-weight: 400;
   color: var(--p-color);
   line-height: 23.4px;
 }
@@ -115,11 +116,6 @@ footer {
 
 .header__theme-menu-button:focus {
   border-bottom: 1px solid var(--p-color);
-}
-
-.header__theme-menu-button_active {
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
 }
 
 .block-title {
