@@ -52,10 +52,6 @@ p {
   line-height: 23.4px;
 }
 
-ul {
-  list-style: none;
-}
-
 header {
   grid-row: 1;
 }
@@ -154,16 +150,13 @@ footer {
 }
 
 .highlight-block {
+  width: 100%;
   color: var(--text-color-title);
   background-color: var(--accent-color);
   height: fit-content;
 }
 
 /* ----- Декоративный элемент REC только в тёмной теме ----- */
-.dark-theme .decorative-rec {
-  display: block;
-}
-
 .light-theme .decorative-rec {
   display: none;
 }
@@ -535,10 +528,6 @@ footer {
     width: 51.9vw;
     justify-self: end;
     padding: 0 20px 15px;
-  }
-
-  .highlight-block {
-    width: 100%;
   }
 
   .li-content {
