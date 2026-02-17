@@ -4,11 +4,7 @@ html {
 
 body {
   font-family: "IBM Plex Mono", monospace;
-
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
   min-height: 100vh;
   display: grid;
   grid-template-areas:
@@ -16,31 +12,24 @@ body {
     "main"
     "footer";
   grid-template-rows: auto 1fr auto;
-
+  grid-template-columns: 1fr;
+  place-self: center end;
+  background-color: var(--bg-color);
   background: var(--bg-image) center / cover fixed;
 }
 
-h1,
-h2,
-p,
-ul,
-li,
-strong {
-  margin: 0;
-  padding: 0;
-  margin-block: 0;
-}
-
-h2,
-strong {
+h2 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.32;
+  /* line-height: 23.4px; */
   color: var(--text-color);
 }
 
+h3,
+h4,
 p {
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 400;
   color: var(--p-color);
@@ -60,8 +49,6 @@ footer {
 .header {
   display: grid;
   width: 100%;
-  /*  min-height: 668px;*/
-  background-color: var(--bg-color);
   color: var(--text-color);
   place-self: center center;
 }
@@ -125,17 +112,18 @@ footer {
 
 .cit-block {
   grid-column: span 3;
-  padding: 0 10px 10px;
   place-self: start end;
+  background-color: var(--accent-color);
+  margin: 0 10px 10px;
 }
 
 .cit-text {
   font-weight: 700;
-  font-size: 18px;
+  color: var(--text-color-title);
 }
 
 .highlight-block {
-  width: 100%;
+  /*  width: 100%; */
   color: var(--text-color-title);
   background-color: var(--accent-color);
   height: fit-content;
@@ -162,8 +150,8 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ff0070;
-  box-shadow: 0 0 12px #ff0070;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   vertical-align: middle;
   margin-left: 9px;
 }
@@ -217,7 +205,7 @@ footer {
   gap: 20px;
 }
 
-.li-content {
+.li-benefit {
   display: grid;
   gap: 10px;
 }
@@ -239,7 +227,6 @@ footer {
 /* ----- Галерея картинок 3 колонки ----- */
 .gallery-list {
   display: grid;
-  box-sizing: border-box;
   gap: 10px;
 }
 
@@ -260,6 +247,10 @@ footer {
   object-fit: cover;
 }
 
+.gallery-list .gallery-item:last-child {
+  margin-bottom: 0;
+}
+
 .footer {
   display: grid;
   width: 100%;
@@ -271,6 +262,9 @@ footer {
   padding-top: 3px;
 }
 
+/* -----
+Ссылка с тенью
+----- */
 .link-info {
   position: relative;
   display: inline-block;
@@ -282,8 +276,8 @@ footer {
   border: 1px solid transparent;
 }
 
-.link-info_found::before {
-  content: "выяснили";
+.link-info::before {
+  content: ""; /* Пустое значение по умолчанию */
   position: absolute;
   color: transparent;
   left: 0;
@@ -291,24 +285,20 @@ footer {
   z-index: -1;
   text-shadow:
     0px 0px,
-    2px 2px 0 var(--link-effects); /* Уменьшена прозрачность тени */
+    2px 2px 0 var(--link-effects);
+}
+
+.link-info_found::before {
+  content: "выяснили";
 }
 
 .link-info_showed::before {
   content: "показал";
-  position: absolute;
-  color: transparent;
-  height: 10px;
-  left: 0;
-  z-index: -1; /* тень под текстом */
-  text-shadow:
-    0px 0px,
-    2px 2px 0 var(--link-effects); /* Уменьшена прозрачность тени */
 }
 
 .link-info:hover {
   text-decoration: underline;
-  text-decoration-color: var(--link-effects);
+  text-decoration-color: var(--p-color);
   text-shadow: none;
 }
 
@@ -321,11 +311,6 @@ footer {
 Медиазапросы Tablet (768px) 
 ----- */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .page {
-    height: 100vh;
-    max-height: 924px;
-  }
-
   .decorated-zone {
     min-height: 1024px;
     height: 100vh;
@@ -344,7 +329,7 @@ footer {
   .header {
     display: grid;
     grid-auto-rows: minmax(20px, auto);
-    min-height: 1024px;
+    /*   min-height: 1024px; */
     padding: 0;
   }
 
@@ -369,8 +354,9 @@ footer {
 
   .cit-block {
     justify-self: end;
-    padding: 0px 20px 20px;
-    width: 52.7vw;
+    padding: 0;
+    width: 47.5vw;
+    margin: 0px 20px 20px;
   }
 
   .main-content {
@@ -378,38 +364,35 @@ footer {
     margin: 60px 20px;
   }
 
-  .main-section:nth-child(2) h2 {
-    width: 30.7vw;
+  .column-one {
+    grid-column: span 1;
   }
 
-  .main-section:nth-child(1),
-  .main-section:nth-child(3) {
-    grid-template-columns: 30.7vw 1fr;
-    /* gap: 20px; */
-    box-sizing: border-box;
-    column-gap: 20px;
-  }
-
-  .main-section:nth-child(2) .card__main-title,
-  .main-section:nth-child(3) .card__main-title {
-    width: 30.7vw;
-  }
-
-  .main-section:nth-child(1) ul,
-  .main-section:nth-child(3) ul {
-    grid-column: 2;
-  }
-
-  .advice-block {
+  .li-benefit {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-  }
-  .strong-title {
-    padding: 0;
+    gap: 10px;
   }
 
-  /* ----- Галерея картинок 3 колонки Tablet (768px) ----- */
+  .list-one-columns {
+    grid-template-columns: 1fr;
+    grid-column: 1 / span 3;
+  }
+
+  .main-section_two_columns {
+    grid-template-columns: 31.5% auto;
+    gap: 25px;
+  }
+
+  .three-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+  }
+
+  /* ----- 
+  Галерея картинок  Tablet (768px) 
+  ----- */
   .main-section_gallery {
     gap: 20px;
   }
@@ -496,68 +479,28 @@ footer {
 
   .block-title_text {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    /*   font-size: calc(157px - 1vh);*/
-    letter-spacing: 5px;
   }
 
-  .cit-block {
-    width: 51.9vw;
-    justify-self: end;
-    padding: 0 20px 15px;
-  }
-
-  .li-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .main-section:nth-child(1),
-  .main-section:nth-child(3) {
-    gap: 25px;
+  .main-section_two_columns {
     grid-template-columns: 31.5% auto;
+    gap: 25px;
   }
 
-  .main-section:nth-child(3) .card__main-title {
-    width: 44vh;
+  .list-one-columns {
+    grid-column: span 1;
   }
 
-  .main-section:nth-child(1) h2,
-  .main-section:nth-child(3) h2 {
-    grid-column: 1;
-  }
-
-  .main-section:nth-child(1) ul,
-  .main-section:nth-child(3) ul {
-    grid-column: 2;
-  }
-
-  .main-section:nth-child(2) ul {
+  .three-columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
   }
 
   .gallery-list {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     grid-template-rows: 25.3vw 30.7vw 42.3vw;
-    box-sizing: border-box;
     grid-auto-flow: dense;
-  }
-
-  .gallery__item {
-    box-sizing: border-box;
-    min-block-size: 4.3em;
-
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   /* Позиционирование картинок галерей в сетке */

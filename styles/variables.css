@@ -1,6 +1,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --bg-image: url("../images/cover-image-light.png");
+    --bg-color: #fff1f7;
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
@@ -13,11 +14,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-image: url("../images/cover-image-dark.png");
+    --bg-color: #000028;
     --text-color: #ff0070;
     --text-color-title: #000028;
     --title-color: #db00ff;
     --accent-color: #ff0070;
     --p-color: #f1b2ce;
-    --rec-display: inline;
+    --link-effects: #ff0070;
+    --rec-display: block;
   }
 }

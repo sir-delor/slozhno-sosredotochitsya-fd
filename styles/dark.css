@@ -1,9 +1,12 @@
 /* Базовые стили для темной темы */
 :root.theme-dark {
   --bg-image: url("../images/cover-image-dark.png");
+  --bg-color: #000028;
   --text-color: #ff0070;
   --text-color-title: #000028;
   --title-color: #db00ff;
   --accent-color: #ff0070;
   --p-color: #f1b2ce;
+  --link-effects: #ff0070;
+  --rec-display: block;
 }
