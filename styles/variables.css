@@ -18,11 +18,11 @@
   --text-shadow-footer: 2px 2px 0 var(--shadow-color);
 
   /* Отключение декоративного элемента REC */
-  --rec-display: var(--rec-display) /* Анимации */ --transition-duration: 0.3s;
+  --rec-display: var(--rec-display) /* Анимации */ 
   --transition-timing: ease-in-out;
 
   /* Анимация для фона */
-  --transition-duration: 0.5s;
+  --transition-duration: 0.8s;
   --transition-timing: ease-in-out;
   transition:
     background-color var(--transition-duration) var(--transition-timing),
