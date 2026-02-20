@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-family);
   width: 100%;
   min-height: 100vh;
   display: grid;
@@ -14,25 +14,24 @@ body {
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
   place-self: center end;
+  /*  background-color: var(--bg-color);
+  background: var(--bg-image) center / cover fixed; */
+
+  /* Наследование анимации */
+  transition: inherit;
+}
+
+body {
   background-color: var(--bg-color);
-  background: var(--bg-image) center / cover fixed;
+  background-image: var(--bg-image);
 }
 
-h2 {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 18px;
-  font-weight: 700;
-  /* line-height: 23.4px; */
-  color: var(--text-color);
-}
-
-h3,
 h4,
 p {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-family);
   font-size: 18px;
   font-weight: 400;
-  color: var(--p-color);
+  color: var(--text-primary);
   line-height: 23.4px;
 }
 
@@ -49,13 +48,12 @@ footer {
 .header {
   display: grid;
   width: 100%;
-  color: var(--text-color);
+  color: var(--heading-color);
   place-self: center center;
 }
 
 .header__theme-menu {
   grid-column: 3;
-  list-style: none;
   padding: 75px 10px 0;
   justify-items: end;
 }
@@ -68,27 +66,24 @@ footer {
 
 .header__theme-menu-button {
   font-size: 18px;
-  font-family: "IBM Plex Mono", monospace;
-  background: transparent;
+  background: none;
   outline: none;
   border: 1px solid transparent;
   min-width: 70px;
   text-transform: lowercase;
-  padding-bottom: 0;
-  margin-bottom: 0;
 }
 
 .header__theme-menu-button_active {
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
+  color: var(--heading-color);
+  border: 1px solid var(--heading-color);
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid rgba(var(--border-color-rgb), 0.4);
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--p-color);
+  border-bottom: 1px solid var(--heading-color);
 }
 
 .block-title {
@@ -98,52 +93,35 @@ footer {
   place-self: start end;
 }
 
-.block-title_text {
-  font-weight: 700;
+.block-title__text {
   line-height: 0.81;
   font-size: clamp(7.23rem, 0.5625rem + 14.4531vw, 9.8125rem);
   /*  font-size: 116px; /* fallback для неподдерживаемых браузеров */
-  color: var(--title-color);
-}
-
-.text-shadow_header {
-  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .cit-block {
   grid-column: span 3;
   place-self: start end;
-  background-color: var(--accent-color);
   margin: 0 10px 10px;
 }
 
-.cit-text {
-  font-weight: 700;
-  color: var(--text-color-title);
-}
-
 .highlight-block {
-  /*  width: 100%; */
-  color: var(--text-color-title);
-  background-color: var(--accent-color);
   height: fit-content;
 }
 
 /* ----- Декоративный элемент REC только в тёмной теме ----- */
 
 .decorative-rec {
-  display: var(--rec-display);
   position: absolute;
   top: 10px;
   right: 20px;
   font-weight: 400;
-  font-size: 18px;
-  color: var(--text-color);
-  line-height: 24px;
+
   text-transform: uppercase;
 }
 
 /* Псевдоэлемент: точка справа от REC с размытием */
+
 .decorative-rec::after {
   content: "";
   display: inline-block;
@@ -168,7 +146,7 @@ footer {
   position: absolute;
   width: 25px;
   height: 25px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--heading-color);
 }
 
 /* Верхний правый уголок */
@@ -258,7 +236,6 @@ footer {
 }
 
 .text-shadow_footer {
-  text-shadow: 2px 2px 0 var(--accent-color);
   padding-top: 3px;
 }
 
@@ -285,7 +262,7 @@ footer {
   z-index: -1;
   text-shadow:
     0px 0px,
-    2px 2px 0 var(--link-effects);
+    2px 2px 0 var(--shadow-color);
 }
 
 .link-info_found::before {
@@ -298,17 +275,18 @@ footer {
 
 .link-info:hover {
   text-decoration: underline;
-  text-decoration-color: var(--p-color);
+  text-underline-offset: 4px;
+  text-decoration-color: var(--text-primary);
   text-shadow: none;
 }
 
 .link-info:focus-visible {
   background-color: transparent;
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid var(--text-primary);
 }
 
 /* ----- 
-Медиазапросы Tablet (768px) 
+Медиазапросы (768px - 1024px) 
 ----- */
 @media (min-width: 768px) and (max-width: 1024px) {
   .decorated-zone {
@@ -374,24 +352,24 @@ footer {
     gap: 10px;
   }
 
-  .list-one-columns {
+  .main-section__grid--cols {
     grid-template-columns: 1fr;
     grid-column: 1 / span 3;
   }
 
-  .main-section_two_columns {
+  .main-section__grid--2cols {
     grid-template-columns: 31.5% auto;
     gap: 25px;
   }
 
-  .three-columns {
+  .main-section__grid--3cols {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
   }
 
   /* ----- 
-  Галерея картинок  Tablet (768px) 
+  Галерея картинок 
   ----- */
   .main-section_gallery {
     gap: 20px;
@@ -481,16 +459,22 @@ footer {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .main-section_two_columns {
+  .main-section__grid--2cols {
     grid-template-columns: 31.5% auto;
     gap: 25px;
   }
 
-  .list-one-columns {
+  .li-benefit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-section__grid--cols {
     grid-column: span 1;
   }
 
-  .three-columns {
+  .main-section__grid--3cols {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
@@ -536,7 +520,7 @@ footer {
 
 /* ----- 
 Медиозапросы экран больше 1440px 
------ */
+
 @media (min-width: 1440px) {
   .body {
     display: flex;
@@ -548,3 +532,4 @@ footer {
     flex-direction: column;
   }
 }
+----- */

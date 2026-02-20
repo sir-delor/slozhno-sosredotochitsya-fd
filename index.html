@@ -13,8 +13,10 @@
     <link rel="preload" as="image" href="images/cover-image-dark.png" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./styles/variables.css" />
+
     <link rel="stylesheet" href="./styles/globals.css" />
+
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
@@ -25,7 +27,7 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/apple-touch-icon.png"
+      href="images/mobile-icon.png"
     />
 
     <!-- Скрипт с defer (не блокирует рендеринг) -->
@@ -63,7 +65,7 @@
       </nav>
 
       <div class="block-title">
-        <h1 class="block-title_text text-shadow_header">no focus</h1>
+        <h1 class="block-title__text">no focus</h1>
       </div>
       <div class="cit-block highlight-block">
         <div>
@@ -78,7 +80,7 @@
       </div>
     </header>
     <main class="main-content">
-      <section class="main-section main-section_two_columns">
+      <section class="main-section main-section__grid--2cols">
         <h2>Почему сосредоточиться так сложно</h2>
         <ul class="ul-content">
           <li class="li-benefit">
@@ -117,11 +119,13 @@
         </ul>
       </section>
       <section class="main-section">
-        <div class="three-columns">
+        <div class="main-section__grid--3cols">
           <h2>Что снижает концентрацию внимания?</h2>
         </div>
-        <ul class="ul-content list-one-columns three-columns">
-          <li class="li-benefit list-one-columns">
+        <ul
+          class="ul-content main-section__grid--cols main-section__grid--3cols"
+        >
+          <li class="li-benefit main-section__grid--cols">
             <h2 class="highlight-block">Концентрация</h2>
             <p>
               Как концентрация может снижаться из-за… концентрации? Любая
@@ -132,7 +136,7 @@
               может не выдержать, если не давать ей отдохнуть.
             </p>
           </li>
-          <li class="li-benefit list-one-columns">
+          <li class="li-benefit main-section__grid--cols">
             <h2 class="highlight-block">Еда</h2>
             <p>
               «Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно
@@ -143,7 +147,7 @@
               хотим ещё больше быстрых углеводов.
             </p>
           </li>
-          <li class="li-benefit list-one-columns">
+          <li class="li-benefit main-section__grid--cols">
             <h2 class="highlight-block">Гаджеты</h2>
             <p>
               Да-да, это та самая ситуация, когда на экране ноутбука — код, в
@@ -158,18 +162,18 @@
         </ul>
       </section>
 
-      <section class="main-section main-section_two_columns">
+      <section class="main-section main-section__grid--2cols">
         <h2>
           Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
           секунд)
         </h2>
         <div class="advice-block">
-          <h2 class="highlight-block">
+          <h3 class="highlight-block">
             5 простых (на самом деле не очень) советов
-          </h2>
+          </h3>
           <ul class="ul-content">
             <li class="li-benefit">
-              <h3 class="highlight-block">Представьте небо и облака</h3>
+              <h4 class="highlight-block">Представьте небо и облака</h4>
               <p>
                 Или листья в ручье. Тут дело в лёгкой медитации, которая
                 помогает успокоиться. Ведь часто именно тревожные мысли о
@@ -182,7 +186,7 @@
               </p>
             </li>
             <li class="li-benefit">
-              <h3 class="highlight-block">Включите музыку</h3>
+              <h4 class="highlight-block">Включите музыку</h4>
               <p>
                 Но не любую, и не любимую. Любимая может быть связана с сильными
                 положительными эмоциями, которые тоже очень сильно отвлекают.
@@ -191,7 +195,7 @@
               </p>
             </li>
             <li class="li-benefit">
-              <h3 class="highlight-block">Прогуляйтесь</h3>
+              <h4 class="highlight-block">Прогуляйтесь</h4>
               <p>
                 Или даже пробегитесь. Лучше найти парк или лес: один эксперимент
                 <a
@@ -209,7 +213,7 @@
               </p>
             </li>
             <li class="li-benefit">
-              <h3 class="highlight-block">Хорошо ешьте</h3>
+              <h4 class="highlight-block">Хорошо ешьте</h4>
               <p>
                 Мы — не ваша бабушка, но это правда важно. Выбирайте продукты,
                 которые препятствуют резким скачкам сахара в крови. Например, с
@@ -219,7 +223,7 @@
               </p>
             </li>
             <li class="li-benefit">
-              <h3 class="highlight-block">Читайте</h3>
+              <h4 class="highlight-block">Читайте</h4>
               <p>
                 Настоящие бумажные книги. Это правда помогает с концентрацией:
                 чтобы прочитать пост в соцсети, достаточно нескольких минут или

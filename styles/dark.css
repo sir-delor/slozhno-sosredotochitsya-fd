@@ -1,12 +1,56 @@
 /* Базовые стили для темной темы */
 :root.theme-dark {
-  --bg-image: url("../images/cover-image-dark.png");
+  /* Основные цвета (дефолт — тёмная тема) */
+  /* Фон */
   --bg-color: #000028;
-  --text-color: #ff0070;
-  --text-color-title: #000028;
-  --title-color: #db00ff;
-  --accent-color: #ff0070;
-  --p-color: #f1b2ce;
-  --link-effects: #ff0070;
-  --rec-display: block;
+  --bg-image: url("../images/cover-image-dark.png");
+  --bg-repeat: no-repeat;
+  --bg-size: cover;
+
+  --color-heading-primary: #db00ff; /* Главный заголовок */
+  --heading-color: #ff0070; /* заголовки */
+  --shadow-color: var(--heading-color);
+  --heading-shadow: 4px 4px 0 var(--shadow-color); /* Тень заголовока */
+  --text-shadow-footer: 2px 2px 0 var(--shadow-color);
+
+  --text-primary: #f1b2ce; /* основной текст */
+  --text-secondary: #000028; /* второстепенный текст */
+  --text-color-title: var(--bg-color);
+  --accent-color: var(--heading-color);
+
+  --link-effects: var(--heading-color);
+
+  --border-color: var(--heading-color);
+  --border-color-rgb: 255, 0, 112;
+  --shadow-color: var(--heading-color);
+
+  --rec-display: block; /* показываь декор rec */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+  --bg-image: url("../images/cover-image-dark.png");
+  --bg-repeat: no-repeat;
+  --bg-size: cover;
+
+  --color-heading-primary: #db00ff; /* Главный заголовок */
+  --heading-color: #ff0070; /* заголовки */
+  --shadow-color: var(--heading-color);
+  --heading-shadow: 4px 4px 0 var(--shadow-color); /* Тень заголовока */
+  --text-shadow-footer: 2px 2px 0 var(--shadow-color);
+
+  --text-primary: #f1b2ce; /* основной текст */
+  --text-secondary: #000028; /* второстепенный текст */
+  --text-color-title: var(--bg-color);
+  --accent-color: var(--heading-color);
+
+  --link-effects: var(--heading-color);
+
+  --border-color: var(--heading-color);
+  --border-color-rgb: 255, 0, 112;
+  --shadow-color: var(--heading-color);
+
+  --rec-display: block; /* показываь декор rec */
+}
 }
