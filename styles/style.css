@@ -348,17 +348,17 @@ footer {
     gap: 10px;
   }
 
-  .main-section__grid--cols {
+  .main-section__grid--col {
     grid-template-columns: 1fr;
     grid-column: 1 / span 3;
   }
 
-  .main-section__grid--2cols {
+  .main-section__grid--cols {
     grid-template-columns: 31.5% auto;
     gap: 25px;
   }
 
-  .main-section__grid--3cols {
+  .main-section__grid--equal {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
@@ -455,7 +455,7 @@ footer {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .main-section__grid--2cols {
+  .main-section__grid--cols {
     grid-template-columns: 31.5% auto;
     gap: 25px;
   }
@@ -466,11 +466,11 @@ footer {
     gap: 10px;
   }
 
-  .main-section__grid--cols {
+  .main-section__grid--col {
     grid-column: span 1;
   }
 
-  .main-section__grid--3cols {
+  .main-section__grid--equal {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
