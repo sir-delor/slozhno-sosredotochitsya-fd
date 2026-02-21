@@ -1,7 +1,4 @@
 :root {
-  --bg-color: var(--bg-color);
-  --bg-image: var(--bg-image);
-
   /* Общие параметры */
   --font-family: "IBM Plex Mono", monospace;
   --line-height: 1.6;
@@ -18,8 +15,8 @@
   --text-shadow-footer: 2px 2px 0 var(--shadow-color);
 
   /* Отключение декоративного элемента REC */
-  --rec-display: var(--rec-display) /* Анимации */ 
-  --transition-timing: ease-in-out;
+  --rec-display: var(--rec-display) /* Анимации */
+    --transition-timing: ease-in-out;
 
   /* Анимация для фона */
   --transition-duration: 0.8s;
@@ -65,6 +62,7 @@ h4,
 p {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
+  color: var(--text-primary);
 }
 
 .decorative-rec {
@@ -96,52 +94,3 @@ p {
   color: var(--color-heading-primary);
   text-shadow: var(--text-shadow-footer);
 }
-
-/*
-:root {
-
-  
-  /* Основные цвета (дефолт — тёмная тема) */
-/* Фон */
-/* --bg-color: #000028;
-  --bg-image: url("../images/cover-image-dark.png");
-  --bg-repeat: no-repeat;
-  --bg-size: cover;
-
-  /* Анимации */
-/* --transition-duration: 0.3s;
-  --transition-timing: ease-in-out;
-
-  /* Анимация для фона */
-/* transition:
-    background-color var(--transition-duration) var(--transition-timing),
-    background-image var(--transition-duration) var(--transition-timing);
-
-  --color-heading-primary: #db00ff; /* Главный заголовок */
-/*  --heading-color: #ff0070; /* заголовки */
-/*  --shadow-color: var(--heading-color);
-  --heading-shadow: 4px 4px 0 var(--shadow-color); /* Тень заголовока */
-/* --text-shadow-footer: 2px 2px 0 var(--shadow-color);
-
-  --text-primary: #f1b2ce; /* основной текст */
-/*  --text-secondary: #353430; /* второстепенный текст */
-
-/*  --accent-color: var(--heading-color);
-
-  --link-effects: var(--heading-color);
-
-  --border-color: var(--heading-color);
-  --border-color-rgb: 255, 0, 112;
-  --shadow-color: var(--heading-color);
-
-  --rec-display: block; /* показываь декор rec */
-
-/* Общие параметры */
-/*  --font-family: "IBM Plex Mono", monospace;
-  --line-height: 1.6;
-  --spacing: 16px;
-  --font-size: 18px;
-  --font-weight-bold: 700;
-}
-
-*/

@@ -28,10 +28,6 @@ body {
 
 h4,
 p {
-  font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--text-primary);
   line-height: 23.4px;
 }
 
@@ -54,7 +50,7 @@ footer {
 
 .header__theme-menu {
   grid-column: 3;
-  padding: 75px 10px 0;
+  padding: 70px 10px 0;
   justify-items: end;
 }
 
@@ -89,7 +85,7 @@ footer {
 .block-title {
   grid-row: 2;
   width: 69vw;
-  padding: 13px 10px 0;
+  padding: 15px 10px 0;
   place-self: start end;
 }
 
@@ -236,7 +232,8 @@ footer {
 }
 
 .text-shadow_footer {
-  padding-top: 3px;
+  padding: 0;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
 /* -----
@@ -307,7 +304,6 @@ footer {
   .header {
     display: grid;
     grid-auto-rows: minmax(20px, auto);
-    /*   min-height: 1024px; */
     padding: 0;
   }
 
@@ -322,7 +318,7 @@ footer {
 
   .block-title {
     width: 100%;
-    padding: 15px 0px 0;
+    padding: 10px 0px 0;
   }
 
   .block-title_text {
@@ -333,7 +329,7 @@ footer {
   .cit-block {
     justify-self: end;
     padding: 0;
-    width: 47.5vw;
+    width: 48vw;
     margin: 0px 20px 20px;
   }
 
